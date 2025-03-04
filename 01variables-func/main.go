@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func anotherFunc() (string, string){
+func anotherFunc() (string, string) {
 	return "This is another function", "that works."
 }
 
@@ -15,13 +15,15 @@ func anotherWayToDeclareVar() {
 func main() {
 	fmt.Println("Hey, Michael. Welcome to Golang!")
 
-	var firstStatement string; var firstNumber int
+	var firstStatement string
+	var firstNumber int
 	firstStatement = "Hello, World!"
 	firstNumber = 42
 
 	secondNumber := firstNumber + 1
 
 	fmt.Println("His first statement and first number are ", firstStatement, " and ", firstNumber, " respectively.")
+	fmt.Printf("His first statement and first number are %s and %d respectively.\n", firstStatement, firstNumber) // using a formatted print option
 	fmt.Println("His favorite number is ", secondNumber)
 
 	// var holdMySecondFunc string; var holdMySecondFunck string
@@ -29,8 +31,8 @@ func main() {
 
 	holdFunc, holdFunck := anotherFunc()
 
-	fmt.Println(holdFunc, holdFunck)
+	fmt.Printf("First String: %s, \nSecond String: %s\n", holdFunc, holdFunck)
 
-	fmt.Println("\nAnother way to declare variable")
+	fmt.Println("\nAnother way to declare variable:")
 	anotherWayToDeclareVar()
 }

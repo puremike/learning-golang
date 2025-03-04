@@ -6,14 +6,11 @@ import (
 )
 
 func main() {
-	myChannel := make(chan int)
+	myChannel := make(chan int) // create a channel
 	defer close(myChannel)
-	go useGeneratedRandomNFunc(myChannel, 100)
-	num := <- myChannel
 
+	go helpers.GenerateRandomNumbers(myChannel, 100)
+
+	num := <-myChannel
 	log.Println("Random Number =", num)
-}
-
-func useGeneratedRandomNFunc(n chan int, m int) {
-	n <- helpers.GenerateRandomNumbers(m)
 }

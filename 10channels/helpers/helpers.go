@@ -2,7 +2,7 @@ package helpers
 
 import "math/rand"
 
-func GenerateRandomNumbers(n int) int {
+func GenerateRandomNumbers(ch chan int, n int) {
 	num := rand.Intn(n)
-	return num
-} 
+	ch <- num // pass the message (num) to the channel
+}
